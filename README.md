@@ -24,11 +24,11 @@ The current product version is **1.0.0**, release revision **2**.
 
 | Platform | Package |
 | --- | --- |
-| Windows 10 or later, x86_64 | [`Sally-Windows-x86_64.zip`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Windows-x86_64.zip) |
+| Windows 10 or later, x86_64 | [`Sally-Windows-x86_64.exe`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Windows-x86_64.exe) |
 | Linux, glibc x86_64 | [`Sally-Linux-x86_64.tar.gz`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Linux-x86_64.tar.gz) |
 | SHA-256 checksums | [`Sally-SHA256SUMS.txt`](https://github.com/stack1245/Sally/releases/latest/download/Sally-SHA256SUMS.txt) |
 
-The Windows ZIP contains `Sally-Setup.exe`. Windows packages currently do not
+The Windows download is a direct installer. Windows packages currently do not
 carry an Authenticode publisher signature, so Windows may show an Unknown
 Publisher warning. Confirm this repository, the exact filename, and the
 published SHA-256 before running the installer.

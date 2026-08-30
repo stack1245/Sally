@@ -20,7 +20,7 @@ documentation is available at [sally.st4ck.kr](https://sally.st4ck.kr).
 
 ## Download
 
-The current product version is **1.0.0**, release revision **2**.
+The current product version is **1.0.0**.
 
 | Platform | Package |
 | --- | --- |
@@ -33,20 +33,24 @@ carry an Authenticode publisher signature, so Windows may show an Unknown
 Publisher warning. Confirm this repository, the exact filename, and the
 published SHA-256 before running the installer.
 
-## Revision 2 trust migration
+## Signing key migration
 
-Revision 2 rotates Sally's production Ed25519 update identity. Revision 1
+This 1.0.0 release rotates Sally's production Ed25519 update identity. Existing
 installations trust only the previous public key and therefore cannot
-authenticate revision 2 automatically. Install revision 2 manually once from
-this repository or the [official download page](https://sally.st4ck.kr/download).
+authenticate the new build automatically. Install 1.0.0 manually once from this
+repository or the [official download page](https://sally.st4ck.kr/download).
 After that reinstall, self-update uses the new key normally. Sally does not use
 unsigned metadata, dual-trust bypasses, or an old-key impersonation path.
+
+The signed updater metadata records internal `release_revision: 2` only for
+downgrade and replay protection. It is not part of the product version or the
+public GitHub tag.
 
 ## Verification
 
 Each release includes:
 
-- versionless Windows and Linux archives;
+- versionless Windows and Linux packages;
 - `Sally-SHA256SUMS.txt` covering every public verification asset;
 - CycloneDX SBOMs for both platforms;
 - `Sally-Update-Manifest.json` and its exact-byte 64-byte Ed25519 signature;

@@ -20,31 +20,31 @@ documentation is available at [sally.st4ck.kr](https://sally.st4ck.kr).
 
 ## Download
 
-The current product version is **1.0.0**.
+The release badge and the [latest release](https://github.com/stack1245/Sally/releases/latest)
+are the authoritative current version.
 
 | Platform | Package |
 | --- | --- |
-| Windows 10 or later, x86_64 | [`Sally-Windows-x86_64.exe`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Windows-x86_64.exe) |
+| Windows 10 or later, x86_64 | [`Sally-Windows-x86_64.zip`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Windows-x86_64.zip) |
 | Linux, glibc x86_64 | [`Sally-Linux-x86_64.tar.gz`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Linux-x86_64.tar.gz) |
 | SHA-256 checksums | [`Sally-SHA256SUMS.txt`](https://github.com/stack1245/Sally/releases/latest/download/Sally-SHA256SUMS.txt) |
 
-The Windows download is a direct installer. Windows packages currently do not
-carry an Authenticode publisher signature, so Windows may show an Unknown
-Publisher warning. Confirm this repository, the exact filename, and the
-published SHA-256 before running the installer.
+Extract the Windows ZIP and run `Sally-Setup.exe`. Windows packages currently
+do not carry an Authenticode publisher signature, so Windows may show an
+Unknown Publisher warning. Confirm this repository, the exact filename, and
+the published SHA-256 before running the installer.
 
-## Signing key migration
+## Release history
 
-This 1.0.0 release rotates Sally's production Ed25519 update identity. Existing
-installations trust only the previous public key and therefore cannot
-authenticate the new build automatically. Install 1.0.0 manually once from this
-repository or the [official download page](https://sally.st4ck.kr/download).
-After that reinstall, self-update uses the new key normally. Sally does not use
-unsigned metadata, dual-trust bypasses, or an old-key impersonation path.
+Each version keeps its `vX.Y.Z` tag and release notes in the
+[release history](https://github.com/stack1245/Sally/releases). Only the
+[latest release](https://github.com/stack1245/Sally/releases/latest) retains
+downloadable binaries. Older releases remain available as patch-note history
+and direct users to the current download.
 
-The signed updater metadata records internal `release_revision: 2` only for
-downgrade and replay protection. It is not part of the product version or the
-public GitHub tag.
+Signed updater metadata records an internal release revision for downgrade and
+replay protection. It is not part of the product version or public GitHub tag.
+Sally does not accept unsigned update metadata.
 
 ## Verification
 

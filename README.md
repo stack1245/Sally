@@ -5,6 +5,7 @@
 ![Updates](https://img.shields.io/badge/Updates-Ed25519%20signed-5B4BCE)
 ![Windows](https://img.shields.io/badge/Windows-x86__64-0078D4?logo=windows11&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-x86__64-FCC624?logo=linux&logoColor=111111)
+![macOS](https://img.shields.io/badge/macOS-PKG%20gate%20pending-999999?logo=apple&logoColor=white)
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
 
 Sally is a security shell for authorized, workspace-scoped security operations.
@@ -14,7 +15,8 @@ is also described as **Sally Security Shell**, **security shell**, and **Sally
 shell**.
 
 This repository is the official public binary distribution channel. Each
-current release exposes exactly the Windows and Linux install packages, while
+current release exposes the Windows and Linux install packages that passed
+their platform gates, while
 release notes remain as version history. It does not contain Sally source code,
 signing private keys, updater metadata, checksums, or SBOMs. Product
 documentation and the signed update channel are available at
@@ -27,10 +29,13 @@ are the authoritative current version.
 
 | Platform | Package |
 | --- | --- |
-| Windows 10 or later, x86_64 | [`Sally-Windows-x86_64.zip`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Windows-x86_64.zip) |
+| Windows 10 or later, x86_64 | [`Sally-Windows-x86_64-Setup.exe`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Windows-x86_64-Setup.exe) |
 | Linux, glibc x86_64 | [`Sally-Linux-x86_64.tar.gz`](https://github.com/stack1245/Sally/releases/latest/download/Sally-Linux-x86_64.tar.gz) |
+| macOS Apple Silicon, arm64 | `Sally-macOS-arm64.pkg` — release gate pending |
+| macOS Intel, x86_64 | `Sally-macOS-x86_64.pkg` — release gate pending |
 
-Extract the Windows ZIP and run `Sally-Setup.exe`. Windows packages currently
+Run the Windows Setup EXE directly. The Linux archive contains only
+`Sally-Setup`. Windows packages currently
 do not carry an Authenticode publisher signature, so Windows may show an
 Unknown Publisher warning. Confirm this repository, the exact filename, and
 the SHA-256 recorded in the signed stable update manifest before running the
@@ -52,7 +57,7 @@ release identity, and Sally does not accept unsigned update metadata.
 
 Each GitHub Release includes exactly:
 
-- versionless Windows and Linux packages;
+- versionless platform packages that passed their release gates;
 - immutable release notes identifying the shared `vX.Y.Z` product version.
 
 The trusted release pipeline generates and verifies SHA-256 checksums and

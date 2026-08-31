@@ -44,16 +44,16 @@ Each version keeps its `vX.Y.Z` tag and release notes in the
 downloadable binaries. Older releases remain available as patch-note history
 and direct users to the current download.
 
-Signed updater metadata records an internal release revision for downgrade and
-replay protection. It is not part of the product version or public GitHub tag.
-Sally does not accept unsigned update metadata.
+Signed updater metadata uses the same `vX.Y.Z` product release version as the
+public GitHub tag to enforce downgrade and replay protection. This is the sole
+release identity, and Sally does not accept unsigned update metadata.
 
 ## Verification
 
 Each GitHub Release includes exactly:
 
 - versionless Windows and Linux packages;
-- immutable release notes identifying product version and release revision.
+- immutable release notes identifying the shared `vX.Y.Z` product version.
 
 The trusted release pipeline generates and verifies SHA-256 checksums and
 platform CycloneDX SBOMs without attaching them as public Release assets. The
